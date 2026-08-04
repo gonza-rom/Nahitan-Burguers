@@ -5,12 +5,13 @@ import { fmtPrecio } from '@/lib/menu';
 
 const CartContext = createContext(null);
 
-// ⚠️ Reemplazá por el número real, formato: 549 + código de área sin 0 + número sin 15
-const WHATSAPP_NUMBER = '5493834289514';
+export const WHATSAPP_NUMBER = '5493834XXXXXX';
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState([]);
   const [open, setOpen] = useState(false);
+  const [toast, setToast] = useState(null); // { tipo: 'add' | 'remove', nombre, variante }
+  const [entrega, setEntrega] = useState('retiro'); // 'retiro' | 'delivery'
 
   useEffect(() => {
     const saved = localStorage.getItem('nahitan_carrito');
@@ -40,7 +41,8 @@ export function CartProvider({ children }) {
         },
       ];
     });
-    setOpen(true);
+
+    setToast({ tipo: 'add', nombre: burger.nombre, variante });
   }
 
   function updateQty(key, delta) {
@@ -52,7 +54,11 @@ export function CartProvider({ children }) {
   }
 
   function removeItem(key) {
+    const item = items.find((i) => i.key === key);
     setItems((prev) => prev.filter((i) => i.key !== key));
+    if (item) {
+      setToast({ tipo: 'remove', nombre: item.nombre, variante: item.variante });
+    }
   }
 
   function clearCart() {
@@ -70,8 +76,9 @@ export function CartProvider({ children }) {
       msg += `${i.cantidad}x ${i.nombre} (${i.variante}) - ${fmtPrecio(i.precio * i.cantidad)}\n`;
     });
     msg += `\n*Total: ${fmtPrecio(total)}*\n`;
+    msg += `\n🛵 Entrega: ${entrega === 'delivery' ? 'Delivery' : 'Retiro en local'}`;
     if (nombreCliente) msg += `\n👤 Nombre: ${nombreCliente}`;
-    if (direccion) msg += `\n📍 Dirección: ${direccion}`;
+    if (entrega === 'delivery' && direccion) msg += `\n📍 Dirección: ${direccion}`;
     if (notas) msg += `\n📝 Notas: ${notas}`;
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
@@ -80,7 +87,22 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ items, addItem, updateQty, removeItem, clearCart, total, cantidadTotal, open, setOpen, checkoutWhatsapp }}
+      value={{
+        items,
+        addItem,
+        updateQty,
+        removeItem,
+        clearCart,
+        total,
+        cantidadTotal,
+        open,
+        setOpen,
+        checkoutWhatsapp,
+        toast,
+        setToast,
+        entrega,
+        setEntrega,
+      }}
     >
       {children}
     </CartContext.Provider>

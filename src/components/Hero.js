@@ -16,7 +16,7 @@ export default function Hero() {
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute top-4 left-4 bg-error text-on-error font-bold text-xs px-4 py-2 rounded-full shadow-hard uppercase tracking-wider -rotate-2">
-            Smashing Now
+            Nahitan Burger's
           </div>
         </div>
 

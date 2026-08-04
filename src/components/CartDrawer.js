@@ -5,7 +5,10 @@ import { useCart } from '@/context/CartContext';
 import { fmtPrecio } from '@/lib/menu';
 
 export default function CartDrawer() {
-  const { items, open, setOpen, updateQty, removeItem, total, checkoutWhatsapp } = useCart();
+  const {
+    items, open, setOpen, updateQty, removeItem, total,
+    checkoutWhatsapp, entrega, setEntrega,
+  } = useCart();
   const [nombreCliente, setNombreCliente] = useState('');
   const [direccion, setDireccion] = useState('');
   const [notas, setNotas] = useState('');
@@ -25,7 +28,7 @@ export default function CartDrawer() {
         </div>
 
         {items.length === 0 ? (
-          <p className="text-on-surface-variant text-center py-12">Todavía no agregaste nada</p>
+          <p className="text-on-surface-variant text-center py-12">Todavía no agregaste nada 🍔</p>
         ) : (
           <>
             <div className="space-y-4 mb-6">
@@ -52,6 +55,37 @@ export default function CartDrawer() {
               <span>{fmtPrecio(total)}</span>
             </div>
 
+            {/* Selector de entrega */}
+            <div className="mb-5">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">
+                Forma de entrega
+              </h4>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setEntrega('retiro')}
+                  className={`flex-1 py-3 rounded-lg text-sm font-bold border-2 flex items-center justify-center gap-2 transition-colors ${
+                    entrega === 'retiro'
+                      ? 'bg-secondary text-on-secondary border-primary'
+                      : 'bg-surface-container-low text-on-surface-variant border-outline-variant'
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-lg">storefront</span>
+                  Retiro en local
+                </button>
+                <button
+                  onClick={() => setEntrega('delivery')}
+                  className={`flex-1 py-3 rounded-lg text-sm font-bold border-2 flex items-center justify-center gap-2 transition-colors ${
+                    entrega === 'delivery'
+                      ? 'bg-secondary text-on-secondary border-primary'
+                      : 'bg-surface-container-low text-on-surface-variant border-outline-variant'
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-lg">moped</span>
+                  Delivery
+                </button>
+              </div>
+            </div>
+
             <div className="space-y-3 mb-6">
               <input
                 type="text"
@@ -60,13 +94,17 @@ export default function CartDrawer() {
                 onChange={(e) => setNombreCliente(e.target.value)}
                 className="w-full border-2 border-outline-variant rounded-lg px-3 py-2 text-sm"
               />
-              <input
-                type="text"
-                placeholder="Dirección de entrega (si es delivery)"
-                value={direccion}
-                onChange={(e) => setDireccion(e.target.value)}
-                className="w-full border-2 border-outline-variant rounded-lg px-3 py-2 text-sm"
-              />
+
+              {entrega === 'delivery' && (
+                <input
+                  type="text"
+                  placeholder="Dirección de entrega"
+                  value={direccion}
+                  onChange={(e) => setDireccion(e.target.value)}
+                  className="w-full border-2 border-outline-variant rounded-lg px-3 py-2 text-sm"
+                />
+              )}
+
               <textarea
                 placeholder="Notas (ej: sin cebolla, punto de cocción, etc.)"
                 value={notas}
