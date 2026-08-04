@@ -1,25 +1,7 @@
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* ── Variables ── */
-:root {
-  --background: #f9f9f9;
-  --foreground: #1a1c1c;
-  --primary: #000000;
-  --platinum-grey: #E5E5E5;
-  --onyx-black: #0A0A0A;
-
-  /* ── Variables legacy (usadas en productos/page.js y componentes con inline styles) ── */
-  --bg:          #f9f9f9;
-  --surface:     #f9f9f9;
-  --surface-low: #f3f3f4;
-  --muted:       #4c4546;
-  --border:      #E5E5E5;
-  --accent:      #e8e2d4;
-  --font-head:   var(--font-hanken), 'Hanken Grotesk', sans-serif;
-  --font-body:   var(--font-karla), 'Karla', sans-serif;
-}
 
 /* ── Reset base ── */
 html {
@@ -29,13 +11,11 @@ html {
 }
 
 body {
-  font-family: var(--font-karla), 'Karla', Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #1a1c1c;
+  font-family: 'Be Vietnam Pro', Arial, sans-serif;
   overflow-x: hidden;
 }
 
-/* ── Imágenes ── */
+/* ── Imágenes y video ── */
 img, video {
   max-width: 100%;
   height: auto;
@@ -45,25 +25,11 @@ img, video {
 /* ── Scrollbar ── */
 ::-webkit-scrollbar       { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #111; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #333; }
+::-webkit-scrollbar-thumb { background: #421406; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #5d2918; }
 
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
-
-/*
-  ── Transición global SOLO en color/borde ──────────────────────────────────
-  IMPORTANTE: el header y sus hijos están excluidos porque manejan
-  sus propias transiciones inline vía style={}. La regla global sobre *
-  interfería con los cambios de padding/height del navbar causando el
-  loop: navbar cambia tamaño → página se mueve → scroll cambia →
-  navbar cambia tamaño → loop infinito.
-*/
-*:not(header):not(header *),
-*:not(header)::before,
-*:not(header)::after {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
 
 /* ── Botones: mínimo táctil ── */
 button, [role="button"] { min-height: 44px; min-width: 44px; }
@@ -74,7 +40,7 @@ button svg, a svg, button span { min-height: unset; min-width: unset; }
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
 }
 
-/* ── FOOTER: asegurar texto blanco sobre fondo negro ── */
+/* ── Footer: texto blanco sobre fondo oscuro ── */
 footer,
 footer * {
   color: inherit;
@@ -82,52 +48,19 @@ footer * {
 
 /* ════════════ ANIMACIONES ════════════ */
 
-@keyframes ticker-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-ticker {
-  animation: ticker-scroll 40s linear infinite;
-}
-@media (hover: hover) {
-  .animate-ticker:hover { animation-play-state: paused; }
-}
-
 @keyframes slide-in {
   from { transform: translateX(100%); }
   to   { transform: translateX(0); }
 }
 .animate-slide-in { animation: slide-in 0.3s ease-out; }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
-}
-.animate-pulse { animation: pulse 1.5s ease-in-out infinite; }
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-.animate-spin { animation: spin 1s linear infinite; }
-
-/* ════════════ PRODUCT CARD ════════════ */
-.product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-@media (hover: hover) {
-  .product-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  }
-}
-
-/* ════════════ CARRITO ════════════ */
 @keyframes badge-bounce {
   0%, 100% { transform: scale(1); }
   50%       { transform: scale(1.3); }
 }
 .cart-badge { animation: badge-bounce 0.4s ease-out; }
 
-/* ════════════ WHATSAPP ════════════ */
+/* ════════════ WHATSAPP FLOTANTE (si sumás botón fijo) ════════════ */
 .whatsapp-float {
   position: fixed;
   bottom: max(20px, env(safe-area-inset-bottom));

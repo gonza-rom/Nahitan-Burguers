@@ -25,7 +25,7 @@ export const MENU = [
     id: 'especial',
     nombre: 'Burger Especial',
     ingredientes: ['Triple queso Dambo La Paulina', 'Medallón 120gr', 'Jamón cocido Lario', 'Lechuga fresca', 'Tomate', 'Huevo', 'Mayo Nahitan'],
-    imagen: '/especial/especial.webp',
+    imagen: '/menu/burger-especial.jpg',
     precios: { Simple: 13000, Doble: 15000, Triple: 17000 },
   },
   {
