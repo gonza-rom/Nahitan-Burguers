@@ -6,7 +6,7 @@ import { fmtPrecio } from '@/lib/menu';
 const CartContext = createContext(null);
 
 // ⚠️ Reemplazá por el número real, formato: 549 + código de área sin 0 + número sin 15
-const WHATSAPP_NUMBER = '5493834XXXXXX';
+const WHATSAPP_NUMBER = '5493834953873';
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState([]);
