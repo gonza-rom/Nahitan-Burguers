@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased font-body bg-background text-on-background">
+      <body className="antialiased font-body bg-background text-on-background" suppressHydrationWarning>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

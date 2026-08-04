@@ -18,8 +18,11 @@ function BurgerCard({ burger }) {
 
       <div className="p-5 flex flex-col flex-grow">
         <h3 className="font-display text-xl font-bold text-primary mb-2">{burger.nombre}</h3>
-        <p className="text-sm text-on-surface-variant mb-4 flex-grow">
+        <p className="text-sm text-on-surface-variant mb-2 flex-grow">
           {burger.ingredientes.join(' · ')}
+        </p>
+        <p className="text-xs font-semibold text-secondary mb-4">
+          {burger.incluye}
         </p>
 
         <div className="flex gap-2 mb-4">
@@ -59,7 +62,7 @@ export default function MenuSection() {
     <section id="menu" className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl">
       <div className="text-center mb-12">
         <h2 className="font-display text-3xl md:text-4xl font-extrabold text-primary uppercase tracking-tight">
-          Burger's Smash
+          Burger's
         </h2>
         <p className="text-on-surface-variant mt-2">Elegí tu hamburguesa y armá tu pedido</p>
         <div className="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full" />
