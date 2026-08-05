@@ -66,7 +66,7 @@ export const MENU = [
     nombre: 'Burger Roque',
     ingredientes: ['Medallón 120gr (uno smasheado c/ cebolla y roquefort, otro con Dambo)', 'Panceta ahumada', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/roque/roque-pro.png',
     precios: { Simple: 15000, Doble: 17000, Triple: 19000 },
   },
   {
@@ -85,7 +85,7 @@ export const MENU = [
     ingredientes: ['Medallón de carne', 'Lechuga fresca', 'Tomate', 'Jamón cocido Lario', 'Queso cremoso', 'Huevo', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/sin-imagen.png',
-    precios: { Simple: 13000, Doble: 15500 },
+    precios: { Simple: 15000, Doble: 19000 },
   },
   {
     id: 'zapping-cheddar',
@@ -94,7 +94,7 @@ export const MENU = [
     ingredientes: ['Medallón de carne', 'Cheddar Milkau', 'Panceta ahumada', 'Cebolla caramelizada', 'Barbacoa', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/sin-imagen.png',
-    precios: { Simple: 13000, Doble: 15500 },
+    precios: { Simple: 18500, Doble: 22000 },
   },
   {
     id: 'lomito-especial',

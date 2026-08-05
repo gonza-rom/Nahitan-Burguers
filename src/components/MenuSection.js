@@ -4,20 +4,41 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { MENU, CATEGORIAS, fmtPrecio } from '@/lib/menu';
 import { useCart } from '@/context/CartContext';
+import ProductModal from '@/components/ProductModal';
 
-function BurgerCard({ burger }) {
+function BurgerCard({ burger, onOpen }) {
   const variantes = Object.keys(burger.precios);
   const [variante, setVariante] = useState(variantes[0]);
   const { addItem } = useCart();
 
   return (
     <div className="bg-surface rounded-xl border-2 border-primary shadow-hard overflow-hidden flex flex-col">
-      <div className="relative w-full aspect-[4/3] bg-surface-container-high">
-        <Image src={burger.imagen} alt={burger.nombre} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-      </div>
+      <button
+        onClick={() => onOpen(burger)}
+        className="relative w-full aspect-[4/3] bg-surface-container-high group cursor-zoom-in"
+        aria-label={`Ver ${burger.nombre}`}
+      >
+        <Image
+          src={burger.imagen}
+          alt={burger.nombre}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <span className="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity text-3xl">
+            zoom_in
+          </span>
+        </div>
+      </button>
 
       <div className="p-5 flex flex-col flex-grow">
-        <h3 className="font-display text-xl font-bold text-primary mb-2">{burger.nombre}</h3>
+        <button
+          onClick={() => onOpen(burger)}
+          className="text-left font-display text-xl font-bold text-primary mb-2 hover:underline"
+        >
+          {burger.nombre}
+        </button>
         <p className="text-sm text-on-surface-variant mb-2 flex-grow">
           {burger.ingredientes.join(' · ')}
         </p>
@@ -59,6 +80,7 @@ function BurgerCard({ burger }) {
 
 export default function MenuSection() {
   const [categoriaActiva, setCategoriaActiva] = useState('todas');
+  const [productoActivo, setProductoActivo] = useState(null);
 
   const productosFiltrados =
     categoriaActiva === 'todas'
@@ -75,7 +97,6 @@ export default function MenuSection() {
         <div className="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full" />
       </div>
 
-      {/* Tabs de categoría */}
       <div className="flex flex-wrap justify-center gap-2 mb-10">
         <button
           onClick={() => setCategoriaActiva('todas')}
@@ -104,9 +125,13 @@ export default function MenuSection() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {productosFiltrados.map((burger) => (
-          <BurgerCard key={burger.id} burger={burger} />
+          <BurgerCard key={burger.id} burger={burger} onOpen={setProductoActivo} />
         ))}
       </div>
+
+      {productoActivo && (
+        <ProductModal burger={productoActivo} onClose={() => setProductoActivo(null)} />
+      )}
     </section>
   );
 }
