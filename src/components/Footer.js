@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
   return (
     <footer className="bg-tertiary text-white mt-xl border-t-4 border-primary">
@@ -6,9 +8,18 @@ export default function Footer() {
 
           {/* Marca */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-inverse-primary mb-3">
-              Nahitan Burger's
-            </h3>
+            <div className="flex items-center gap-3 mb-3">
+              <Image
+                src="/logo-nahitan.jpeg"
+                alt="Nahitan Burger's"
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-cover border-2 border-secondary"
+              />
+              <h3 className="font-display text-2xl font-bold text-inverse-primary">
+                Nahitan Burger's
+              </h3>
+            </div>
             <p className="text-sm text-white/60 leading-relaxed">
               Smash burgers hechas al momento. Pedí online y coordinamos
               la entrega por WhatsApp.

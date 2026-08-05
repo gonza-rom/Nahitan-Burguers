@@ -4,6 +4,28 @@ import './globals.css';
 export const metadata = {
   title: "Nahitan Burger's",
   description: 'Pedí tu smash burger favorita y coordinamos por WhatsApp',
+  openGraph: {
+    title: "Nahitan Burger's",
+    description: 'Pedí tu smash burger favorita y coordinamos por WhatsApp',
+    url: 'https://nahitanburgers.vercel.app', // reemplazá por tu dominio real
+    siteName: "Nahitan Burger's",
+    images: [
+      {
+        url: '/logo-nahitan.jpeg', // idealmente 1200x630px para mejor preview
+        width: 1200,
+        height: 630,
+        alt: "Nahitan Burger's",
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Nahitan Burger's",
+    description: 'Pedí tu smash burger favorita y coordinamos por WhatsApp',
+    images: ['/logo-nahitan.jpeg'],
+  },
 };
 
 export default function RootLayout({ children }) {

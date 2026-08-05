@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { MENU, fmtPrecio } from '@/lib/menu';
+import { MENU, CATEGORIAS, fmtPrecio } from '@/lib/menu';
 import { useCart } from '@/context/CartContext';
 
 function BurgerCard({ burger }) {
-  const [variante, setVariante] = useState('Simple');
-  const { addItem } = useCart();
   const variantes = Object.keys(burger.precios);
+  const [variante, setVariante] = useState(variantes[0]);
+  const { addItem } = useCart();
 
   return (
     <div className="bg-surface rounded-xl border-2 border-primary shadow-hard overflow-hidden flex flex-col">
@@ -58,18 +58,52 @@ function BurgerCard({ burger }) {
 }
 
 export default function MenuSection() {
+  const [categoriaActiva, setCategoriaActiva] = useState('todas');
+
+  const productosFiltrados =
+    categoriaActiva === 'todas'
+      ? MENU
+      : MENU.filter((b) => b.categoria === categoriaActiva);
+
   return (
     <section id="menu" className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl">
-      <div className="text-center mb-12">
+      <div className="text-center mb-8">
         <h2 className="font-display text-3xl md:text-4xl font-extrabold text-primary uppercase tracking-tight">
-          Burger's
+          Nuestro Menú
         </h2>
-        <p className="text-on-surface-variant mt-2">Elegí tu hamburguesa y armá tu pedido</p>
+        <p className="text-on-surface-variant mt-2">Elegí tu categoría y armá tu pedido</p>
         <div className="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full" />
       </div>
 
+      {/* Tabs de categoría */}
+      <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <button
+          onClick={() => setCategoriaActiva('todas')}
+          className={`px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide border-2 transition-colors ${
+            categoriaActiva === 'todas'
+              ? 'bg-primary text-on-primary border-primary'
+              : 'bg-surface text-on-surface-variant border-outline-variant'
+          }`}
+        >
+          Todas
+        </button>
+        {CATEGORIAS.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => setCategoriaActiva(cat.id)}
+            className={`px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide border-2 transition-colors ${
+              categoriaActiva === cat.id
+                ? 'bg-primary text-on-primary border-primary'
+                : 'bg-surface text-on-surface-variant border-outline-variant'
+            }`}
+          >
+            {cat.nombre}
+          </button>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {MENU.map((burger) => (
+        {productosFiltrados.map((burger) => (
           <BurgerCard key={burger.id} burger={burger} />
         ))}
       </div>
