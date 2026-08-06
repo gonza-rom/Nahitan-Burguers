@@ -12,7 +12,7 @@ export const MENU = [
     nombre: 'Burger Nahitan',
     ingredientes: ['Triple cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', 'Cebolla caramelizada', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/nahitan/nahitan.png',
     precios: { Simple: 13000, Doble: 15000, Triple: 17000 },
   },
   {
@@ -30,7 +30,7 @@ export const MENU = [
     nombre: 'Burger Cheese Onion',
     ingredientes: ['Doble cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', '3 aros de cebolla rebozados', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/cheese-onion/cheese-onion.png',
     precios: { Simple: 13150, Doble: 15150, Triple: 17150 },
   },
   {
@@ -48,7 +48,7 @@ export const MENU = [
     nombre: 'Burger De Lujo',
     ingredientes: ['Triple cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', 'Cebolla morada', 'Lechuga fresca', 'Tomate', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/de-lujo/de-lujo.png',
     precios: { Simple: 14000, Doble: 16000, Triple: 18000 },
   },
   {
@@ -66,7 +66,7 @@ export const MENU = [
     nombre: 'Burger Roque',
     ingredientes: ['Medallón 120gr (uno smasheado c/ cebolla y roquefort, otro con Dambo)', 'Panceta ahumada', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/roque/roque-pro.png',
+    imagen: '/roque/roque.png',
     precios: { Simple: 15000, Doble: 17000, Triple: 19000 },
   },
   {
@@ -84,7 +84,7 @@ export const MENU = [
     nombre: 'Zapping Especial',
     ingredientes: ['Medallón de carne', 'Lechuga fresca', 'Tomate', 'Jamón cocido Lario', 'Queso cremoso', 'Huevo', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/zapping-especial/zapping-especial.png',
     precios: { Simple: 15000, Doble: 19000 },
   },
   {
@@ -102,7 +102,7 @@ export const MENU = [
     nombre: 'Lomito Especial',
     ingredientes: ['Medallón de carne', 'Lechuga fresca', 'Tomate', 'Jamón cocido Lario', 'Queso Dambo La Paulina', 'Huevo', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/lomito-especial/lomito-especial.png',
     precios: { Simple: 13000 },
   },
 ];
