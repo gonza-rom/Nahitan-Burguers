@@ -21,7 +21,7 @@ export const MENU = [
     nombre: 'Burger Cheese',
     ingredientes: ['Cuádruple cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', 'Barbacoa', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/cheese/cheese.png',
     precios: { Simple: 12500, Doble: 14500, Triple: 16500 },
   },
   {
@@ -75,7 +75,7 @@ export const MENU = [
     nombre: 'Burger Argentum',
     ingredientes: ['Medallón 120gr', 'Provoleta', 'Morrones asados', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/argentum/argentum.png',
     precios: { Simple: 13000, Doble: 15500, Triple: 17500 },
   },
   {
@@ -100,10 +100,10 @@ export const MENU = [
     id: 'lomito-especial',
     categoria: 'lomito',
     nombre: 'Lomito Especial',
-    ingredientes: ['Medallón de carne', 'Lechuga fresca', 'Tomate', 'Jamón cocido Lario', 'Queso Dambo La Paulina', 'Huevo', 'Mayo Nahitan'],
+    ingredientes: ['Bife de lomo', 'Lechuga fresca', 'Tomate', 'Jamón cocido Lario', 'Queso Dambo La Paulina', 'Huevo', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/lomito-especial/lomito-especial.png',
-    precios: { Simple: 13000 },
+    precios: { Simple: 15000 },
   },
 ];
 
