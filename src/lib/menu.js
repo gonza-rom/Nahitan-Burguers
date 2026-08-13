@@ -93,7 +93,7 @@ export const MENU = [
     nombre: 'Zapping Cheddar',
     ingredientes: ['Medallón de carne', 'Cheddar Milkau', 'Panceta ahumada', 'Cebolla caramelizada', 'Barbacoa', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/zapping-cheddar/zapping-cheddar.png',
     precios: { Simple: 18500, Doble: 22000 },
   },
   {
