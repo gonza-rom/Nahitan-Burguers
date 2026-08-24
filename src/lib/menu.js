@@ -3,6 +3,7 @@ export const CATEGORIAS = [
   { id: 'burgers', nombre: "Burger's" },
   { id: 'zapping', nombre: 'Zapping' },
   { id: 'lomito', nombre: 'Lomitos' },
+  { id: 'combos', nombre: 'Combos' },
 ];
 
 export const MENU = [
@@ -57,7 +58,7 @@ export const MENU = [
     nombre: 'Burger Oklahoma',
     ingredientes: ['Triple cheddar Milkau', 'Medallón smasheado con cebolla', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/oklahoma/oklahoma.png',
     precios: { Simple: 12000, Doble: 14000, Triple: 16000 },
   },
   {
@@ -104,6 +105,24 @@ export const MENU = [
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/lomito-especial/lomito-especial.png',
     precios: { Simple: 15000 },
+  },
+  {
+    id: 'combo-duo',
+    categoria: 'combos',
+    nombre: 'Combo Dúo',
+    ingredientes: ['1 Cheese simple partida por la mitad', '2 Nuggets de pollo', '2 bastones de mozzarella', 'Papas con cheddar, panceta y verdeo', 'Dip de barbacoa y dip de mayonesa'],
+    incluye: 'Ideal para compartir entre 2.',
+    imagen: '/combo-duo/combo-duo.jpeg',
+    precios: { Único: 0 },
+  },
+  {
+    id: 'combo-amigos',
+    categoria: 'combos',
+    nombre: 'Combo Amigos',
+    ingredientes: ['3 Cheese burger', '3 bastones de mozzarella', '3 patitas de pollo', 'Papas con cheddar, panceta y verdeo'],
+    incluye: 'Ideal para compartir entre amigos.',
+    imagen: '/combo-amigos/combo-amigos.jpeg',
+    precios: { Único: 0 },
   },
 ];
 
