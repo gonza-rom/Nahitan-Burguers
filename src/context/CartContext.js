@@ -5,7 +5,7 @@ import { fmtPrecio } from '@/lib/menu';
 
 const CartContext = createContext(null);
 
-export const WHATSAPP_NUMBER = '5493834XXXXXX';
+export const WHATSAPP_NUMBER = '5493834289514';
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState([]);
