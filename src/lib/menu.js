@@ -20,7 +20,7 @@ export const MENU = [
     id: 'cheese',
     categoria: 'burgers',
     nombre: 'Burger Cheese',
-    ingredientes: ['Cuádruple cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', 'Barbacoa', 'Mayo Nahitan'],
+    ingredientes: ['Cuádruple cheddar Milkau', 'Medallón 120gr', 'Barbacoa', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/cheese/cheese.png',
     precios: { Simple: 12500, Doble: 14500, Triple: 16500 },
@@ -40,7 +40,7 @@ export const MENU = [
     nombre: 'Burger Especial',
     ingredientes: ['Triple queso Dambo La Paulina', 'Medallón 120gr', 'Jamón cocido Lario', 'Lechuga fresca', 'Tomate', 'Huevo', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/especial/especial.png',
     precios: { Simple: 13000, Doble: 15000, Triple: 17000 },
   },
   {
@@ -113,7 +113,7 @@ export const MENU = [
     ingredientes: ['1 Cheese simple partida por la mitad', '2 Nuggets de pollo', '2 bastones de mozzarella', 'Papas con cheddar, panceta y verdeo', 'Dip de barbacoa y dip de mayonesa'],
     incluye: 'Ideal para compartir entre 2.',
     imagen: '/combo-duo/combo-duo.jpeg',
-    precios: { Único: 0 },
+    precios: { Único: 15000 },
   },
   {
     id: 'combo-amigos',
@@ -122,7 +122,7 @@ export const MENU = [
     ingredientes: ['3 Cheese burger', '3 bastones de mozzarella', '3 patitas de pollo', 'Papas con cheddar, panceta y verdeo'],
     incluye: 'Ideal para compartir entre amigos.',
     imagen: '/combo-amigos/combo-amigos.jpeg',
-    precios: { Único: 0 },
+    precios: { Único: 35000 },
   },
 ];
 

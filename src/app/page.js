@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import ProcessSection from '@/components/ProcessSection';
 import MenuSection from '@/components/MenuSection';
 import CartDrawer from '@/components/CartDrawer';
 import CartToast from '@/components/CartToast';
@@ -11,6 +12,7 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
+      <ProcessSection />
       <MenuSection />
       <Footer />
       <CartDrawer />
