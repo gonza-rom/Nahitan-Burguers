@@ -1,23 +1,50 @@
 'use client';
 
+import { useRef, useState } from 'react';
+
 export default function Hero() {
+  const [paused, setPaused] = useState(false);
+  const videoRef = useRef(null);
+
+  function togglePausa() {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setPaused(false);
+    } else {
+      video.pause();
+      setPaused(true);
+    }
+  }
+
   return (
-    <section className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop pt-md">
+    <section id="inicio" className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop pt-md scroll-mt-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-md md:gap-lg bg-tertiary rounded-xl p-md md:p-lg shadow-hard-lg border-4 border-primary overflow-hidden relative">
 
         {/* Video vertical */}
         <div className="relative w-full aspect-[9/16] md:aspect-auto md:h-full bg-surface-container-high rounded-lg border-2 border-primary overflow-hidden group">
           <video
+            ref={videoRef}
             src="/hero.mp4"
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            onClick={togglePausa}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
           />
           <div className="absolute top-4 left-4 bg-error text-on-error font-bold text-xs px-4 py-2 rounded-full shadow-hard uppercase tracking-wider -rotate-2">
             Nahitan Burger's
           </div>
+          <button
+            type="button"
+            onClick={togglePausa}
+            aria-label={paused ? 'Reproducir video' : 'Pausar video'}
+            className="absolute bottom-4 right-4 bg-surface/90 text-primary rounded-full p-2 shadow-hard border-2 border-primary"
+          >
+            <span className="material-symbols-outlined">{paused ? 'play_arrow' : 'pause'}</span>
+          </button>
         </div>
 
         {/* Texto + CTA */}
@@ -54,8 +81,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-0" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-0" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-0 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-0 pointer-events-none" />
       </div>
     </section>
   );
