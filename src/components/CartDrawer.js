@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { fmtPrecio } from '@/lib/menu';
+import { ADDRESS, MAPS_URL } from '@/lib/config';
 
 export default function CartDrawer() {
   const {
@@ -84,6 +85,18 @@ export default function CartDrawer() {
                   Delivery
                 </button>
               </div>
+
+              {entrega === 'retiro' && (
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
+                >
+                  <span className="material-symbols-outlined text-lg">location_on</span>
+                  {ADDRESS}
+                </a>
+              )}
             </div>
 
             <div className="space-y-3 mb-6">
