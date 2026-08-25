@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ADDRESS, MAPS_URL } from '@/lib/config';
 
 export default function Footer() {
   return (
@@ -35,10 +36,19 @@ export default function Footer() {
               <span className="material-symbols-outlined text-base">schedule</span>
               Todos los días · 21:00 a 00:30hs
             </div>
-            <div className="flex items-center gap-2 text-sm text-white/70">
+            <div className="flex items-center gap-2 text-sm text-white/70 mb-2">
               <span className="material-symbols-outlined text-base">moped</span>
               Delivery disponible
             </div>
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
+            >
+              <span className="material-symbols-outlined text-base">location_on</span>
+              {ADDRESS}
+            </a>
           </div>
 
           {/* Links */}
