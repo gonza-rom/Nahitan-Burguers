@@ -4,6 +4,7 @@ export const CATEGORIAS = [
   { id: 'zapping', nombre: 'Zapping' },
   { id: 'lomito', nombre: 'Lomitos' },
   { id: 'combos', nombre: 'Combos' },
+  { id: 'bebidas', nombre: 'Bebidas' },
 ];
 
 export const MENU = [
@@ -80,6 +81,24 @@ export const MENU = [
     precios: { Simple: 13000, Doble: 15500, Triple: 17500 },
   },
   {
+    id: 'cheta',
+    categoria: 'burgers',
+    nombre: 'Burger Cheta',
+    ingredientes: ['Doble queso cheddar Milkau', 'Medallón 120gr', 'Lechuga fresca', 'Tomate', 'Huevo', 'Mayo Nahitan'],
+    incluye: 'Con pote y dip de mayo.',
+    imagen: '/sin-imagen.png',
+    precios: { Simple: 15000, Doble: 17000 },
+  },
+  {
+    id: 'muzza',
+    categoria: 'burgers',
+    nombre: 'Burger Muzza',
+    ingredientes: ['Doble queso cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', 'Bastones de muzzarella', 'Barbacoa', 'Mayo Nahitan'],
+    incluye: 'Con pote y dip de mayo.',
+    imagen: '/sin-imagen.png',
+    precios: { Doble: 15000, Triple: 17000 },
+  },
+  {
     id: 'zapping-especial',
     categoria: 'zapping',
     nombre: 'Zapping Especial',
@@ -123,6 +142,33 @@ export const MENU = [
     incluye: 'Ideal para compartir entre amigos.',
     imagen: '/combo-amigos/combo-amigos.jpeg',
     precios: { Único: 35000 },
+  },
+  {
+    id: 'pepsi',
+    categoria: 'bebidas',
+    nombre: 'Pepsi',
+    ingredientes: [],
+    incluye: 'Lata bien fría.',
+    imagen: '/sin-imagen.png',
+    precios: { Lata: 2500 },
+  },
+  {
+    id: 'seven-up',
+    categoria: 'bebidas',
+    nombre: 'Seven Up',
+    ingredientes: [],
+    incluye: 'Lata bien fría.',
+    imagen: '/sin-imagen.png',
+    precios: { Lata: 2500 },
+  },
+  {
+    id: 'mirinda',
+    categoria: 'bebidas',
+    nombre: 'Mirinda',
+    ingredientes: [],
+    incluye: 'Lata bien fría.',
+    imagen: '/sin-imagen.png',
+    precios: { Lata: 2500 },
   },
 ];
 
