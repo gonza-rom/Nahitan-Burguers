@@ -2,7 +2,6 @@
 export const CATEGORIAS = [
   { id: 'burgers', nombre: "Burger's" },
   { id: 'zapping', nombre: 'Zapping' },
-  { id: 'lomito', nombre: 'Lomitos' },
   { id: 'combos', nombre: 'Combos' },
   { id: 'bebidas', nombre: 'Bebidas' },
 ];
@@ -117,15 +116,6 @@ export const MENU = [
     precios: { Simple: 18500, Doble: 22000 },
   },
   {
-    id: 'lomito-especial',
-    categoria: 'lomito',
-    nombre: 'Lomito Especial',
-    ingredientes: ['Bife de lomo', 'Lechuga fresca', 'Tomate', 'Jamón cocido Lario', 'Queso Dambo La Paulina', 'Huevo', 'Mayo Nahitan'],
-    incluye: 'Con papas McCain y dip de mayo.',
-    imagen: '/lomito-especial/lomito-especial.png',
-    precios: { Simple: 15000 },
-  },
-  {
     id: 'combo-duo',
     categoria: 'combos',
     nombre: 'Combo Dúo',
@@ -148,8 +138,8 @@ export const MENU = [
     categoria: 'bebidas',
     nombre: 'Pepsi',
     ingredientes: [],
-    incluye: 'Lata bien fría.',
-    imagen: '/sin-imagen.png',
+    incluye: 'Lata 354cc bien fría.',
+    imagen: '/bebidas/pepsi.jpg',
     precios: { Lata: 2500 },
   },
   {
@@ -157,8 +147,8 @@ export const MENU = [
     categoria: 'bebidas',
     nombre: 'Seven Up',
     ingredientes: [],
-    incluye: 'Lata bien fría.',
-    imagen: '/sin-imagen.png',
+    incluye: 'Lata 354cc bien fría.',
+    imagen: '/bebidas/seven-up.webp',
     precios: { Lata: 2500 },
   },
   {
@@ -166,8 +156,8 @@ export const MENU = [
     categoria: 'bebidas',
     nombre: 'Mirinda',
     ingredientes: [],
-    incluye: 'Lata bien fría.',
-    imagen: '/sin-imagen.png',
+    incluye: 'Lata 354cc bien fría.',
+    imagen: '/bebidas/mirinda.webp',
     precios: { Lata: 2500 },
   },
 ];
