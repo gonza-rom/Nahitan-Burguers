@@ -14,7 +14,7 @@ export const MENU = [
     ingredientes: ['Triple cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', 'Cebolla caramelizada', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/nahitan/nahitan.png',
-    precios: { Simple: 13000, Doble: 15000, Triple: 17000 },
+    precios: { Simple: 12000, Doble: 14000, Triple: 16000 },
   },
   {
     id: 'cheese',
@@ -23,7 +23,7 @@ export const MENU = [
     ingredientes: ['Cuádruple cheddar Milkau', 'Medallón 120gr', 'Barbacoa', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/cheese/cheese.png',
-    precios: { Simple: 12500, Doble: 14500, Triple: 16500 },
+    precios: { Simple: 10500, Doble: 12500, Triple: 14500 },
   },
   {
     id: 'cheese-onion',
@@ -68,7 +68,7 @@ export const MENU = [
     ingredientes: ['Medallón 120gr (uno smasheado c/ cebolla y roquefort, otro con Dambo)', 'Panceta ahumada', 'Mayo Nahitan'],
     incluye: 'Con papas McCain y dip de mayo.',
     imagen: '/roque/roque.png',
-    precios: { Simple: 15000, Doble: 17000, Triple: 19000 },
+    precios: { Doble: 17000, Triple: 19000 },
   },
   {
     id: 'argentum',
