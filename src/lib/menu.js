@@ -85,7 +85,7 @@ export const MENU = [
     nombre: 'Burger Cheta',
     ingredientes: ['Doble queso cheddar Milkau', 'Medallón 120gr', 'Lechuga fresca', 'Tomate', 'Huevo', 'Mayo Nahitan'],
     incluye: 'Con pote y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/cheta/cheta.jpeg',
     precios: { Simple: 15000, Doble: 17000 },
   },
   {
@@ -94,7 +94,7 @@ export const MENU = [
     nombre: 'Burger Muzza',
     ingredientes: ['Doble queso cheddar Milkau', 'Medallón 120gr', 'Panceta ahumada', 'Bastones de muzzarella', 'Barbacoa', 'Mayo Nahitan'],
     incluye: 'Con pote y dip de mayo.',
-    imagen: '/sin-imagen.png',
+    imagen: '/muzza/muzza.jpeg',
     precios: { Doble: 15000, Triple: 17000 },
   },
   {
