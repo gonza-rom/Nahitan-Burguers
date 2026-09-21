@@ -160,6 +160,15 @@ export const MENU = [
     imagen: '/bebidas/mirinda.webp',
     precios: { Lata: 2500 },
   },
+  {
+    id: 'secco-pomelo',
+    categoria: 'bebidas',
+    nombre: 'Secco Pomelo',
+    ingredientes: [],
+    incluye: 'Botella 500cc bien fría.',
+    imagen: '/bebidas/secco-pomelo.png',
+    precios: { Botella: 1500 },
+  },
 ];
 
 export function fmtPrecio(n) {
